@@ -1,0 +1,32 @@
+class Solution {
+    
+    public boolean isPalindrome(int x) {
+
+    if(x<0){
+    return false;
+        
+    }
+    return(reverse(x));
+    }
+
+    public boolean reverse(int x)
+    {
+    int n=x;
+    int digit=0;
+    while(n>0)
+    {
+    int rem=n%10;
+    digit=digit*10+rem;
+    n=n/10;
+    }
+    if(digit==x)
+    {
+    return true;
+    }
+    else{
+
+    return false;
+    }
+
+}
+}
