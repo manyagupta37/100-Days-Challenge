@@ -1,0 +1,30 @@
+import java.util.Arrays;
+
+public class ProductArrayExceptSelf {
+    public static void main(String[] args) {
+       int[]arr={1,2,3,4};
+       int []res=product(arr);
+        System.out.println(Arrays.toString(res));
+    }
+    public static int[] product(int[]arr)
+    {
+        int pro=1;
+        int[] right=new int[arr.length];
+        for(int i=right.length-1;i>=0;i--)
+        {
+            pro*=arr[i];
+            right[i]=pro;
+        }
+        int left=1;
+        int[]ans=new int[arr.length];
+        for(int j=0;j<arr.length-1;j++)
+        {
+            int val = right[j+1]*left;
+            ans[j]=val;
+            left*=arr[j];
+
+        }
+        ans[arr.length-1]=left;
+        return ans;
+    }
+}
